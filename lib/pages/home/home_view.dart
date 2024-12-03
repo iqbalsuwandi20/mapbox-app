@@ -55,8 +55,8 @@ class HomeView extends StatelessWidget {
                       polylines: [
                         Polyline(
                           points: state.polyline,
-                          strokeWidth: 4.0,
-                          color: Colors.blueGrey[900]!,
+                          strokeWidth: 5.0,
+                          color: Colors.blue[400]!,
                         ),
                       ],
                     ),

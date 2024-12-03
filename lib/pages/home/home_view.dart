@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -41,14 +42,16 @@ class HomeView extends StatelessWidget {
                     ),
                     MarkerLayer(
                       markers: state.markers
-                          .map((marker) => Marker(
-                                point: marker,
-                                child: Icon(
-                                  Icons.location_on,
-                                  color: Colors.red[900],
-                                  size: MediaQuery.of(context).size.width * 0.1,
-                                ),
-                              ))
+                          .map(
+                            (marker) => Marker(
+                              point: marker,
+                              child: Icon(
+                                Icons.location_on,
+                                color: Colors.red[900],
+                                size: MediaQuery.of(context).size.width * 0.1,
+                              ),
+                            ),
+                          )
                           .toList(),
                     ),
                     PolylineLayer(

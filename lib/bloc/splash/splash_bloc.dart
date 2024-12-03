@@ -12,7 +12,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
 
   Future<void> _onStartSplash(
       StartSplash event, Emitter<SplashState> emit) async {
-    await Future.delayed(const Duration(seconds: 7));
-    emit(SplashCompleted());
+    try {
+      await Future.delayed(const Duration(seconds: 5));
+      emit(SplashCompleted());
+    } catch (e) {
+      // ignore: avoid_print
+      print("Error in splash screen: $e");
+    }
   }
 }

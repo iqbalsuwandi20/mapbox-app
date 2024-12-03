@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import 'bloc/map/map_bloc.dart';
 import 'bloc/splash/splash_bloc.dart';
 import 'pages/splash/splash_view.dart';
 
@@ -12,6 +13,7 @@ class App extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => SplashBloc()),
+        BlocProvider(create: (context) => MapBloc()),
       ],
       child: const AppView(),
     );

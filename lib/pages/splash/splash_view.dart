@@ -24,7 +24,7 @@ class SplashView extends StatelessWidget {
         }
       },
       child: Scaffold(
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: Colors.blueGrey[900],
         body: Center(
           child: Padding(
             padding: EdgeInsets.symmetric(
@@ -40,7 +40,7 @@ class SplashView extends StatelessWidget {
                 ),
                 SizedBox(height: MediaQuery.of(context).size.height * 0.05),
                 Text(
-                  "Mapbox",
+                  "Mapbox".toUpperCase(),
                   style: GoogleFonts.poppins(
                     fontSize: MediaQuery.of(context).size.width * 0.08,
                     fontWeight: FontWeight.bold,

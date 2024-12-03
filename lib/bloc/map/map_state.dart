@@ -11,6 +11,7 @@ final class MapLoaded extends MapState {
   final String accessToken;
   final List<LatLng> markers;
   final List<LatLng> polyline;
+  final List<dynamic> suggestions;
 
   MapLoaded(
     this.center,
@@ -18,6 +19,7 @@ final class MapLoaded extends MapState {
     this.accessToken, [
     this.markers = const [],
     this.polyline = const [],
+    this.suggestions = const [],
   ]);
 
   MapLoaded copyWith({
@@ -26,6 +28,7 @@ final class MapLoaded extends MapState {
     String? accessToken,
     List<LatLng>? markers,
     List<LatLng>? polyline,
+    List<dynamic>? suggestions,
   }) {
     return MapLoaded(
       center ?? this.center,
@@ -33,6 +36,7 @@ final class MapLoaded extends MapState {
       accessToken ?? this.accessToken,
       markers ?? this.markers,
       polyline ?? this.polyline,
+      suggestions ?? this.suggestions,
     );
   }
 }

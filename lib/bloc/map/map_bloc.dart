@@ -37,6 +37,22 @@ class MapBloc extends Bloc<MapEvent, MapState> {
         }
       }
     });
+
+    on<SearchLocationEvent>((event, emit) async {
+      final url =
+          'https://api.mapbox.com/geocoding/v5/mapbox.places/${event.query}.json?access_token=pk.eyJ1Ijoia2FybG9kZXYiLCJhIjoiY2xocTN1ZnVjMjB1NDNtcHNoMmI2N2dhcCJ9.5Y8fh8aPfM6f5zDKA_bDiw';
+
+      final response = await http.get(Uri.parse(url));
+
+      if (response.statusCode == 200) {
+        final data = json.decode(response.body);
+        final suggestions = data['features'];
+
+        emit((state as MapLoaded).copyWith(suggestions: suggestions));
+      } else {
+        print("Failed to fetch locations: ${response.statusCode}");
+      }
+    });
   }
 
   Future<void> getRouteForAllMarkers(

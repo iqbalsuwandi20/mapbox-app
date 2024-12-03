@@ -10,3 +10,9 @@ class AddMarkerEvent extends MapEvent {
 
   AddMarkerEvent(this.location);
 }
+
+class SearchLocationEvent extends MapEvent {
+  final String query;
+
+  SearchLocationEvent(this.query);
+}
